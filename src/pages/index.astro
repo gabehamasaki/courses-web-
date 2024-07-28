@@ -1,10 +1,20 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import HeroSection from "@/components/Hero";
+import FeaturedCourses from "@/components/FeaturedCourses";
+import StudentFeedback from "@/components/StudentFeedback";
 import { useApi } from "@/lib/api"
+import type { Course } from "@/types/courses";
 
 const api = useApi(Astro.cookies);
 
+const courses = await api.get<Course[]>("/courses");
 ---
 
 <Layout title="Welcome to Go Courses">
+  <main class="flex-1">
+    <HeroSection client:load/>
+    <FeaturedCourses />
+    <StudentFeedback />
+  </main>
 </Layout>
