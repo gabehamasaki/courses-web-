@@ -8,13 +8,19 @@ import type { Course } from "@/types/courses";
 
 const api = useApi(Astro.cookies);
 
-const courses = await api.get<Course[]>("/courses");
+type Response = {
+  courses: Course[];
+};
+
+const response = await api.get<Response>("/courses");
+const courses = response.data.courses;
+console.log(courses);
 ---
 
 <Layout title="Welcome to Go Courses">
   <main class="flex-1">
     <HeroSection client:load/>
-    <FeaturedCourses />
+    <FeaturedCourses courses={courses} />
     <StudentFeedback />
   </main>
 </Layout>

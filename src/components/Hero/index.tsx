@@ -29,7 +29,7 @@ export default function HeroSection() {
             </div>
           </div>
           <img
-            src="/placeholder.svg"
+            src="/hero-image.svg"
             width="550"
             height="550"
             alt="Hero"
