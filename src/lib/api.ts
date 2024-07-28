@@ -1,5 +1,4 @@
 import type { AstroCookies } from "astro";
-import axios from "axios";
 
 export const useApi = (cookies?: AstroCookies) => {
   const api = axios.create({

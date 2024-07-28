@@ -3,23 +3,17 @@ import Layout from "@/layouts/Layout.astro";
 import HeroSection from "@/components/Hero";
 import FeaturedCourses from "@/components/FeaturedCourses";
 import StudentFeedback from "@/components/StudentFeedback";
-import { useApi } from "@/lib/api"
-import type { Course } from "@/types/courses";
 
-const api = useApi(Astro.cookies);
 
-type Response = {
-  courses: Course[];
-};
 
-const response = await api.get<Response>("/courses");
-const courses = response.data.courses;
-console.log(courses);
+const response = await fetch(import.meta.env.PUBLIC_API_URL + "/courses");
+const data = await response.json();
+const courses = data.courses;
 ---
 
 <Layout title="Welcome to Go Courses">
   <main class="flex-1">
-    <HeroSection client:load/>
+    <HeroSection />
     <FeaturedCourses client:load courses={courses} />
     <StudentFeedback />
   </main>
