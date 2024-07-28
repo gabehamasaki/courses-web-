@@ -35,7 +35,7 @@ export default function FeaturedCourses() {
             opts={{ loop: true, }}
             plugins={[
               Autoplay({
-                delay: 2000,
+                delay: 3000,
               }),
             ]}
           >
