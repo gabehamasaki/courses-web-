@@ -3,14 +3,13 @@ import Layout from "@/layouts/Layout.astro";
 import HeroSection from "@/components/Hero";
 import FeaturedCourses from "@/components/FeaturedCourses";
 import StudentFeedback from "@/components/StudentFeedback";
-import type { Course } from "@/types/courses";
 
 ---
 
 <Layout title="Welcome to Go Courses">
   <main class="flex-1">
     <HeroSection />
-    <FeaturedCourses client:load courses={courses} />
+    <FeaturedCourses client:load  />
     <StudentFeedback />
   </main>
 </Layout>
