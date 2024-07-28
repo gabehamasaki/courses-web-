@@ -6,15 +6,13 @@ import StudentFeedback from "@/components/StudentFeedback";
 
 
 
-const response = await fetch(import.meta.env.PUBLIC_API_URL + "/courses");
-const data = await response.json();
-const courses = data.courses;
+
 ---
 
 <Layout title="Welcome to Go Courses">
   <main class="flex-1">
     <HeroSection />
-    <FeaturedCourses client:load courses={courses} />
+    <FeaturedCourses client:load  />
     <StudentFeedback />
   </main>
 </Layout>
