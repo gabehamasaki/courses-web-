@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 
 export default function Header() {
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center justify-between">
+    <header className="px-4 lg:px-6 h-14 flex items-center justify-between sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Logo />
       <nav className="ml-auto hidden gap-4 sm:gap-6 sm:flex">
         <a
@@ -68,6 +68,7 @@ export default function Header() {
             >
               Contact
             </a>
+
           </nav>
         </SheetContent>
       </Sheet>
