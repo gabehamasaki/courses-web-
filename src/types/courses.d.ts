@@ -5,8 +5,8 @@ export type Course = {
   name: string;
   description: string;
   value: number;
-  image_url: string;
+  image: string;
   teacher: User;
   topics?: any[];
-  students?: User[];
+  students: User[];
 }

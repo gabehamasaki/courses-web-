@@ -11,7 +11,7 @@ import Autoplay from "embla-carousel-autoplay"
 
 const response = await fetch(import.meta.env.PUBLIC_API_URL + "/rated/courses");
 const data = await response.json();
-const courses: Course[] = data.courses;
+const courses: Course[] = data;
 
 export default function FeaturedCourses() {
 
@@ -41,7 +41,7 @@ export default function FeaturedCourses() {
                 <CarouselItem key={course.id} className="group sm:basis-1/2 md:basis-1/3 cursor-pointer">
                   <Card className="relative max-h-96 min-h-96 h-full rounded-lg bg-background group-hover:bg-primary  scale-95 group-hover:scale-100 shadow-md transition-all">
                     <img
-                      src={course.image_url}
+                      src={course.image ? import.meta.env.PUBLIC_API_URL + course.image : "/placeholder.jpg"}
                       width="550"
                       height="310"
                       alt={course.name}
