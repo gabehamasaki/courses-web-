@@ -41,23 +41,23 @@ export default function FeaturedCourses() {
           >
             <CarouselContent>
               {courses.map((course) => (
-                <CarouselItem key={course.id} className="group sm:basis-1/2 md:basis-1/3">
-                  <Card className="relative overflow-hidden max-h-96 min-h-96 h-full rounded-lg bg-background  scale-95 group-hover:scale-100 shadow-sm transition-all hover:shadow-md">
+                <CarouselItem key={course.id} className="group sm:basis-1/2 md:basis-1/3 cursor-pointer">
+                  <Card className="relative max-h-96 min-h-96 h-full rounded-lg bg-background group-hover:bg-primary  scale-95 group-hover:scale-100 shadow-md transition-all">
                     <img
                       src={course.image_url}
                       width="550"
                       height="310"
                       alt={course.name}
-                      className="aspect-video w-full object-cover object-center"
+                      className="aspect-video w-full object-cover object-center rounded-t-sm"
                     />
-                    <CardContent className="p-4">
+                    <CardContent className="p-4 border-t-2 border-primary group-hover:border-primary-foreground">
                       <div className="flex flex-col">
-                        <h3 className="text-lg font-semibold group-hover:underline text-primary">
+                        <h3 className="text-lg font-semibold group-hover:underline text-primary group-hover:text-white ">
                           {course.name}
                         </h3>
-                        <h5 className="text-muted-foreground/80 text-xs">By {course.teacher.name}</h5>
+                        <h5 className="text-muted-foreground/80 text-xs group-hover:text-primary-foreground ">By {course.teacher.name}</h5>
                       </div>
-                      <p className="mt-2 text-sm text-muted-foreground line-clamp-2 text-ellipsis">
+                      <p className="mt-2 text-sm text-muted-foreground group-hover:text-muted line-clamp-2 text-ellipsis">
                         {course.description}
                       </p>
                     </CardContent>
