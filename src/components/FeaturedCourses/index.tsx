@@ -42,7 +42,7 @@ export default function FeaturedCourses() {
             <CarouselContent>
               {courses.map((course, index) => (
                 <CarouselItem key={course.id} className="sm:basis-1/2 md:basis-1/3">
-                  <Card className="group relative overflow-hidden  rounded-lg bg-background shadow-sm transition-all hover:shadow-md">
+                  <Card className="group relative overflow-hidden max-h-96 min-h-96 h-full rounded-lg bg-background shadow-sm transition-all hover:shadow-md">
                     <img
                       src={course.image_url}
                       width="550"
@@ -57,7 +57,7 @@ export default function FeaturedCourses() {
                         </h3>
                         <h5 className="text-muted-foreground/80 text-xs">By {course.teacher.name}</h5>
                       </div>
-                      <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+                      <p className="mt-2 text-sm text-muted-foreground line-clamp-2 text-ellipsis">
                         {course.description}
                       </p>
                     </CardContent>
