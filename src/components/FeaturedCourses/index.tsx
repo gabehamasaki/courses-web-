@@ -29,7 +29,7 @@ export default function FeaturedCourses() {
         </div>
         <div className="mx-auto w-full mt-8">
           <Carousel
-            opts={{ loop: true, }}
+            opts={{ loop: true, startIndex: 0 }}
             plugins={[
               Autoplay({
                 delay: 3000,
