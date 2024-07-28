@@ -9,6 +9,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
+import { useState } from "react";
 
 const response = await fetch(import.meta.env.PUBLIC_API_URL + "/courses");
 
@@ -31,14 +32,15 @@ export default function FeaturedCourses() {
         </div>
         <div className="mx-auto w-full mt-8">
           <Carousel
+            opts={{ loop: true, }}
             plugins={[
               Autoplay({
-                delay: 2000,
+                delay: 5000,
               }),
             ]}
           >
             <CarouselContent>
-              {courses.map((course) => (
+              {courses.map((course, index) => (
                 <CarouselItem key={course.id} className="sm:basis-1/2 md:basis-1/3">
                   <Card className="group relative overflow-hidden  rounded-lg bg-background shadow-sm transition-all hover:shadow-md">
                     <img
