@@ -20,7 +20,7 @@ console.log(courses);
 <Layout title="Welcome to Go Courses">
   <main class="flex-1">
     <HeroSection client:load/>
-    <FeaturedCourses courses={courses} />
+    <FeaturedCourses client:load courses={courses} />
     <StudentFeedback />
   </main>
 </Layout>
