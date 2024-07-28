@@ -1,22 +1,20 @@
 import type { Course } from "@/types/courses";
-import { Card, CardContent, CardTitle } from "../ui/card";
+import { Card, CardContent } from "../ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
-import { useState } from "react";
 
-const response = await fetch(import.meta.env.PUBLIC_API_URL + "/rated/courses");
 
-const data = await response.json();
-const courses: Course[] = data.courses;
+type FeaturedCoursesProps = {
+  courses: Course[];
+};
 
-export default function FeaturedCourses() {
+export default function FeaturedCourses({ courses }: FeaturedCoursesProps) {
 
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
