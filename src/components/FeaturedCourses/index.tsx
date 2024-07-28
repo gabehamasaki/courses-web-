@@ -9,12 +9,11 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
 
+const response = await fetch(import.meta.env.PUBLIC_API_URL + "/rated/courses");
+const data = await response.json();
+const courses: Course[] = data.courses;
 
-type FeaturedCoursesProps = {
-  courses: Course[];
-};
-
-export default function FeaturedCourses({ courses }: FeaturedCoursesProps) {
+export default function FeaturedCourses() {
 
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
