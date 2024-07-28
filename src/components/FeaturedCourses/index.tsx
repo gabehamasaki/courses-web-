@@ -11,7 +11,7 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import { useState } from "react";
 
-const response = await fetch(import.meta.env.PUBLIC_API_URL + "/courses");
+const response = await fetch(import.meta.env.PUBLIC_API_URL + "/rated/courses");
 
 const data = await response.json();
 const courses: Course[] = data.courses;
