@@ -13,7 +13,11 @@ const response = await fetch(import.meta.env.PUBLIC_API_URL + "/rated/courses");
 const data = await response.json();
 const courses: Course[] = data;
 
-export default function FeaturedCourses() {
+type Props = {
+  children: React.ReactNode;
+}
+
+export default function FeaturedCourses({ children }: Props) {
 
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
